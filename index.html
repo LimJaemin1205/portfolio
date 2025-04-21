@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>임재민 포트폴리오</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/webfontworld/sCoreDream/sCoreDream.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "S-CoreDream-4Regular", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f7f7f7;
+        color: #333;
+        line-height: 1.6;
+      }
+      header {
+        background: #4c3f91;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+      }
+      .nav-buttons {
+        margin-top: 1rem;
+      }
+      .nav-buttons button {
+        margin: 0 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: white;
+        color: #4c3f91;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .nav-buttons button:hover {
+        background-color: #e0dbfa;
+      }
+      section {
+        padding: 2rem;
+        max-width: 900px;
+        margin: auto;
+      }
+      h2 {
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 0.5rem;
+      }
+      .project {
+        margin-bottom: 3rem;
+      }
+      .contact {
+        background: #eee;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .info-grid p {
+        margin: 0.2rem 0;
+      }
+      .skill-levels {
+        background: #4c3f91;
+        color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+      .skill-levels ul {
+        list-style: none;
+        padding: 0;
+      }
+      .skill-levels li {
+        margin: 0.5rem 0;
+      }
+      .skill-icon {
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      .project img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+      }
+      #scrollTopBtn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        background-color: #4c3f91;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+      #scrollTopBtn.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      #scrollTopBtn.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      figure {
+        margin: 1rem 0;
+        text-align: center;
+      }
+      figcaption {
+        font-size: 0.9rem;
+        color: #555;
+        margin-top: 0.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>임재민 포트폴리오</h1>
+      <p>Unity / Unreal / Web Developer</p>
+      <div class="nav-buttons">
+        <button
+          onclick="document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });"
+        >
+          프로필
+        </button>
+        <button
+          onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });"
+        >
+          언어 숙련도
+        </button>
+        <button
+          onclick="document.getElementById('cattown').scrollIntoView({ behavior: 'smooth' });"
+        >
+          CATTOWN
+        </button>
+        <button
+          onclick="document.getElementById('unreal').scrollIntoView({ behavior: 'smooth' });"
+        >
+          언리얼 에셋
+        </button>
+        <button
+          onclick="document.getElementById('kimchamel').scrollIntoView({ behavior: 'smooth' });"
+        >
+          월간 김챠멜
+        </button>
+        <a href="포트폴리오_임재민" download style="text-decoration: none"
+          ><button>PDF 다운로드</button></a
+        >
+      </div>
+    </header>
+
+    <section id="profile">
+      <h2>프로필</h2>
+      <div class="info-grid">
+        <div>
+          <p><strong>이름:</strong> 임재민</p>
+          <p><strong>이메일:</strong> sim94531@gmail.com</p>
+          <p><strong>전화번호:</strong> 010-7392-6428</p>
+          <p><strong>주소:</strong> 서울특별시 광진구</p>
+        </div>
+        <div>
+          <p><strong>특징:</strong></p>
+          <ul>
+            <li>능동적인 자세</li>
+            <li>계획적인 개발과 백업 관리</li>
+            <li>뛰어난 커뮤니케이션 능력</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skill-levels">
+      <h2>언어별 숙련도</h2>
+      <ul>
+        <li>
+          <strong>익숙합니다:</strong>
+          <img src="images/csharp.png" alt="C#" class="skill-icon" />C# (Unity),
+          <img src="images/html.png" alt="HTML" class="skill-icon" />HTML/ CSS/
+          JS/ TS(+ JS 라이브러리),
+          <img
+            src="images/firebase.png"
+            alt="Firebase"
+            class="skill-icon"
+          />Firebase
+        </li>
+        <li>
+          <strong>다룰 줄 압니다:</strong>
+          <img src="images/java.png" alt="Java" class="skill-icon" />Java,
+          <img src="images/kotlin.png" alt="Kotlin" class="skill-icon" />Kotlin,
+          <img src="images/Python.png" alt="Python" class="skill-icon" />Python
+        </li>
+        <li>
+          <strong>알고는 있습니다:</strong>
+          <img src="images/db.png" alt="SQL" class="skill-icon" />SQL 질의문,
+          <img src="images/unreal.png" alt="Unreal" class="skill-icon" />Unreal
+          (Blueprint)
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>프로젝트</h2>
+
+      <div id="cattown" class="project">
+        <h3>CATTOWN</h3>
+        <p><strong>장르:</strong> 방치형 힐링게임 & 크로스 플랫폼</p>
+        <p><strong>플랫폼:</strong> Unity 2D (PC & Mobile)</p>
+        <p><strong>기술:</strong> C#, Visual Scripting, Firebase</p>
+        <p>
+          <strong>성과:</strong> 과내대회 우수상(공동 3등), 교내대회 동상(공동
+          4등)
+        </p>
+        <p><strong>시연 장면:</strong></p>
+        <figure>
+          <img src="images/capsangjang.png" alt="당시 수상한 과내대회 상장" />
+          <figcaption>과내대회 상장</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/capteamlist.png"
+            alt="교내 홈페이지에 기재된 수상 팀 리스트"
+          />
+          <figcaption>교내 홈페이지에 기재된 수상 팀 리스트</figcaption>
+        </figure>
+        <figure>
+          <img src="images/capsusang.png" alt="교내대회 당시 수상현장" />
+          <figcaption>교내대회 당시 수상현장</figcaption>
+        </figure>
+        <figure>
+          <img src="images/caplogin.png" alt="CATTOWN 로그인 장면" />
+          <figcaption>CATTOWN 로그인 장면</figcaption>
+        </figure>
+        <figure>
+          <img src="images/captown.png" alt="CATTOWN 마을 장면" />
+          <figcaption>CATTOWN 마을 장면</figcaption>
+        </figure>
+        <figure>
+          <img src="images/captime.png" alt="CATTOWN 방치 안내문 장면" />
+          <figcaption>CATTOWN 방치 안내문 장면</figcaption>
+        </figure>
+        <figure>
+          <img src="images/capfight.png" alt="CATTOWN 전투 장면" />
+          <figcaption>CATTOWN 전투 장면</figcaption>
+        </figure>
+      </div>
+
+      <div id="unreal" class="project">
+        <h3>초보자를 위한 언리얼 에셋</h3>
+        <p><strong>장르:</strong> Unreal 5.1.1 초보자용 패키지</p>
+        <p><strong>플랫폼:</strong> PC</p>
+        <p><strong>기술:</strong> Blueprint, React(TypeScript)</p>
+        <p><strong>성과:</strong> 1인 제작, 12주 내 홈페이지 및 패키지 완성</p>
+        <p><strong>시연 장면:</strong></p>
+        <figure>
+          <img src="images/solohomepage.png" alt="언리얼 홈페이지" />
+          <figcaption>언리얼 홈페이지</figcaption>
+        </figure>
+        <figure>
+          <img src="images/solosetup.png" alt="언리얼 테스트 환경" />
+          <figcaption>언리얼 테스트 환경</figcaption>
+        </figure>
+        <figure>
+          <img src="images/solotest1.png" alt="언리얼 시연 화면 1" />
+          <figcaption>언리얼 시연 화면 1</figcaption>
+        </figure>
+        <figure>
+          <img src="images/solotest2.png" alt="언리얼 시연 화면 2" />
+          <figcaption>언리얼 시연 화면 2</figcaption>
+        </figure>
+      </div>
+
+      <div id="kimchamel" class="project">
+        <h3>월간 김챠멜</h3>
+        <p><strong>장르:</strong> 온라인 월간지</p>
+        <p><strong>플랫폼:</strong> HTML/CSS/JS + Cloudflare</p>
+        <p><strong>기술:</strong> Photoshop, 클라우드 호스팅</p>
+        <p><strong>성과:</strong> 공동제작, 창간호 순수익 100만원 이상</p>
+        <p><strong>시연 장면:</strong></p>
+        <figure>
+          <img src="images/mcmain.png" alt="월간 김챠멜 메인 화면" />
+          <figcaption>월간 김챠멜 메인 화면</figcaption>
+        </figure>
+        <figure>
+          <img src="images/mcexplanation.png" alt="잡지 상세 설명 장면" />
+          <figcaption>잡지 상세 설명 장면</figcaption>
+        </figure>
+        <figure>
+          <img src="images/mcselect.png" alt="장르별 내부 장면" />
+          <figcaption>장르별 내부 장면</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="images/mcinnerexplanation.png"
+            alt="잡지 내 페이지 설명 장면"
+          />
+          <figcaption>잡지 내 페이지 설명 장면</figcaption>
+        </figure>
+        <figure>
+          <img src="images/mcinnerpassword.png" alt="잡지 내 비밀번호 기능" />
+          <figcaption>잡지 내 비밀번호 기능</figcaption>
+        </figure>
+        <figure>
+          <img src="images/mcinnerlastpage.png" alt="크레딧 내 역할 소개" />
+          <figcaption>크레딧 내 역할 소개</figcaption>
+        </figure>
+        <figure>
+          <img src="images/mcsubscribe1.png" alt="구매 리스트 1" />
+          <figcaption>구매 리스트 1</figcaption>
+        </figure>
+        <figure>
+          <img src="images/mcsubscribe2.png" alt="구매 리스트 2" />
+          <figcaption>구매 리스트 2</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <button
+      id="scrollTopBtn"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    >
+      ↑
+    </button>
+
+    <script>
+      const scrollBtn = document.getElementById("scrollTopBtn");
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
+        ) {
+          scrollBtn.classList.add("show");
+        } else {
+          scrollBtn.classList.remove("show");
+        }
+      };
+    </script>
+  </body>
+</html>
