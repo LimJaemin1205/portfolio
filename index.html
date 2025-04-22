@@ -113,11 +113,58 @@
         visibility: visible;
         pointer-events: auto;
       }
-      #scrollTopBtn.show {
+      .remote-panel {
+        position: fixed;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 1000;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+      .remote-panel.show {
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
+      }
+      .remote-panel button {
+        background: #4c3f91;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .remote-buttons {
+        background: #4c3f91;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      }
+      .remote-buttons button {
+        display: block;
+        width: 100px;
+        height: 40px;
+        background: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
       }
 
+      .remote-buttons .divider {
+        height: 1px;
+        background: white;
+        opacity: 0.3;
+        margin: 0 8px;
+      }
       figure {
         margin: 1rem 0;
         text-align: center;
@@ -132,7 +179,6 @@
   <body>
     <header>
       <h1>임재민 포트폴리오</h1>
-      <p>Unity / Unreal / Web Developer</p>
       <div class="nav-buttons">
         <button
           onclick="document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });"
@@ -160,7 +206,7 @@
           월간 김챠멜
         </button>
         <a href="포트폴리오_임재민" download style="text-decoration: none"
-          ><button>PDF 다운로드</button></a
+          ><button>PDF 다운로드(파일로 자세히 보기)</button></a
         >
       </div>
     </header>
@@ -191,19 +237,22 @@
         <li>
           <strong>익숙합니다:</strong>
           <img src="images/csharp.png" alt="C#" class="skill-icon" />C# (Unity),
-          <img src="images/html.png" alt="HTML" class="skill-icon" />HTML/ CSS/
-          JS/ TS(+ JS 라이브러리),
+          <img
+            src="images/html.png"
+            alt="HTML"
+            class="skill-icon"
+          />HTML/CSS/JS/TS(+ JS 라이브러리),
           <img
             src="images/firebase.png"
             alt="Firebase"
             class="skill-icon"
-          />Firebase
+          />Firebase(와 같은 호스팅 기능)
         </li>
         <li>
           <strong>다룰 줄 압니다:</strong>
           <img src="images/java.png" alt="Java" class="skill-icon" />Java,
           <img src="images/kotlin.png" alt="Kotlin" class="skill-icon" />Kotlin,
-          <img src="images/Python.png" alt="Python" class="skill-icon" />Python
+          <img src="images/python.png" alt="Python" class="skill-icon" />Python
         </li>
         <li>
           <strong>알고는 있습니다:</strong>
@@ -220,6 +269,7 @@
       <div id="cattown" class="project">
         <h3>CATTOWN</h3>
         <p><strong>장르:</strong> 방치형 힐링게임 & 크로스 플랫폼</p>
+        <p><strong>개발기간:</strong> 방치형 힐링게임 & 크로스 플랫폼</p>
         <p><strong>플랫폼:</strong> Unity 2D (PC & Mobile)</p>
         <p><strong>기술:</strong> C#, Visual Scripting, Firebase</p>
         <p>
@@ -264,7 +314,7 @@
         <h3>초보자를 위한 언리얼 에셋</h3>
         <p><strong>장르:</strong> Unreal 5.1.1 초보자용 패키지</p>
         <p><strong>플랫폼:</strong> PC</p>
-        <p><strong>기술:</strong> Blueprint, React(TypeScript)</p>
+        <p><strong>기술:</strong> Unreal(Blueprint), React(TypeScript)</p>
         <p><strong>성과:</strong> 1인 제작, 12주 내 홈페이지 및 패키지 완성</p>
         <p><strong>시연 장면:</strong></p>
         <figure>
@@ -288,9 +338,9 @@
       <div id="kimchamel" class="project">
         <h3>월간 김챠멜</h3>
         <p><strong>장르:</strong> 온라인 월간지</p>
-        <p><strong>플랫폼:</strong> HTML/CSS/JS + Cloudflare</p>
-        <p><strong>기술:</strong> Photoshop, 클라우드 호스팅</p>
-        <p><strong>성과:</strong> 공동제작, 창간호 순수익 100만원 이상</p>
+        <p><strong>플랫폼:</strong> PC기반의 크로스 플랫폼</p>
+        <p><strong>기술:</strong> HTML/CSS/JS + Cloudflare(호스팅)</p>
+        <p><strong>성과:</strong> 창간호에 순수익 100만원 이상</p>
         <p><strong>시연 장면:</strong></p>
         <figure>
           <img src="images/mcmain.png" alt="월간 김챠멜 메인 화면" />
@@ -330,6 +380,40 @@
       </div>
     </section>
 
+    <div class="remote-panel" id="remotePanel">
+      <div class="remote-buttons">
+        <button
+          onclick="document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });"
+        >
+          프로필
+        </button>
+        <div class="divider"></div>
+        <button
+          onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });"
+        >
+          언어
+        </button>
+        <div class="divider"></div>
+        <button
+          onclick="document.getElementById('cattown').scrollIntoView({ behavior: 'smooth' });"
+        >
+          CATTOWN
+        </button>
+        <div class="divider"></div>
+        <button
+          onclick="document.getElementById('unreal').scrollIntoView({ behavior: 'smooth' });"
+        >
+          언리얼 패키지
+        </button>
+        <div class="divider"></div>
+        <button
+          onclick="document.getElementById('kimchamel').scrollIntoView({ behavior: 'smooth' });"
+        >
+          월간 김챠멜
+        </button>
+      </div>
+    </div>
+
     <button
       id="scrollTopBtn"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
@@ -339,14 +423,18 @@
 
     <script>
       const scrollBtn = document.getElementById("scrollTopBtn");
+      const remotePanel = document.getElementById("remotePanel");
+
       window.onscroll = function () {
         if (
           document.body.scrollTop > 50 ||
           document.documentElement.scrollTop > 50
         ) {
           scrollBtn.classList.add("show");
+          remotePanel.classList.add("show");
         } else {
           scrollBtn.classList.remove("show");
+          remotePanel.classList.remove("show");
         }
       };
     </script>
